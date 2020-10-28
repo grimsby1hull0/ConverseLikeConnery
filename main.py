@@ -11,7 +11,7 @@ while repeat:
     print(result)
 
     yesno = input("Do you wish to quit? (Yes/No):")
-    if yesno == "No":
+    if yesno == "no":
         repeat = True
 
     if yesno == "No":
