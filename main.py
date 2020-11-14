@@ -1,24 +1,58 @@
-print("Welcome to Conversh like Connery")
+# Glossary
+from tkinter import *
+
+# keydownfunc
+def click():
+    entered_text=textentry.get()
+    # ^ this will collect the text from the text entry box
+    output.delete(0.0, END)
 
 
-repeat = True
-
-while repeat:
-    usertext = input("Enter what you want to be converted into Connery:")
-
-    result = usertext.replace("s","sh")
+    result = entered_text.replace("s","sh")
     result = result.replace("S","Sh")
-    print(result)
+    output.insert(END, result)
 
-    yesno = input("Do you wish to quit? (Yes/No):")
-    if yesno == "no":
-        repeat = True
 
-    if yesno == "No":
-        repeat = True
+# Main
+window = Tk()
+window.title("Conversh Like Connery")
+window.configure(background="black")
 
-    if yesno == "Yes":
-        repeat = False
+### My Photo
+photo1 = PhotoImage(file="glosstitle.png")
+Label(window, image=photo1, bg="black") .grid(row=0, column=0, sticky=N)
 
-    if yesno == "yes":
-        repeat = False
+# Create label
+Label(window, text="Enter the word you would like a definition for:", bg="black", fg="white", font="none 35 bold") .grid(row=5, column=0, sticky=W)
+
+# Create padding
+Label(window, text="_________________________________________________", bg="black", fg="black", font="none 35 bold") .grid(row=1, column=0, sticky=W)
+
+# Create text entry box
+textentry = Entry(window, width=208, bg="grey")
+textentry.grid(row=8, column=0, sticky=W)
+
+# Submit button
+Button(window, text="SUBMIT", width=6, command=click) .grid(row=8, column=0, sticky=E)
+
+# Create another label
+Label (window, text="\nConverted text:", bg="black", fg="white", font="none 12 bold") .grid(row=9, column=0, sticky=W)
+
+# Create output text box
+output = Text(window, width=75, height=4, wrap=WORD, background="grey")
+output.grid(row=11, column=0, columnspan=2, sticky=W)
+
+
+
+# exit function
+def close_window():
+    window.destroy()
+    exit()
+
+# exit button
+Button(window, text="Click to Exit", width=14, command=close_window) .grid(row=15, column=0, sticky=W)
+
+window.resizable(0,0)
+
+# Run main loop
+window.mainloop()
