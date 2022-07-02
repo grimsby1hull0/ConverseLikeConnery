@@ -23,7 +23,7 @@ photo1 = PhotoImage(file="glosstitle.png")
 Label(window, image=photo1, bg="black") .grid(row=0, column=0, sticky=N)
 
 # Create label
-Label(window, text="Enter the word you would like a definition for:", bg="black", fg="white", font="none 35 bold") .grid(row=5, column=0, sticky=W)
+Label(window, text="Enter the text you would like converting:", bg="black", fg="white", font="none 35 bold") .grid(row=5, column=0, sticky=W)
 
 # Create padding
 Label(window, text="_________________________________________________", bg="black", fg="black", font="none 35 bold") .grid(row=1, column=0, sticky=W)
